@@ -8,15 +8,15 @@ import (
 )
 
 type commission struct {
-	Amount     string `json:"amount"`
-	Percentage string `json:"percentage"`
-	Type       string `json:"type"`
+	Amount     float64 `json:"amount"`
+	Percentage float64 `json:"percentage"`
+	Type       string  `json:"type"`
 }
 
 type tax struct {
-	Percentage string `json:"percentage"`
-	HeldTax    string `json:"held_tax"`
-	Type       string `json:"type"`
+	Percentage float64 `json:"percentage"`
+	HeldTax    float64 `json:"held_tax"`
+	Type       string  `json:"type"`
 }
 
 type customerCard struct {

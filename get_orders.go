@@ -22,7 +22,7 @@ type GetOrdersResponse struct {
 
 // GetOrdersParams is the parameters for the GetOrders method.
 type GetOrdersParams struct {
-	Limit         int       // orders per page (default 10)
+	Limit         int       // orders per page (default 10; max 50)
 	FromDate      time.Time // order creation date from (default all)
 	ToDate        time.Time // order creation date to (default all)
 	Status        string    // order status (default all)
@@ -31,6 +31,14 @@ type GetOrdersParams struct {
 
 // GetOrders returns the orders for the given parameters.
 func (c *Client) GetOrders(params GetOrdersParams) (GetOrdersResponse, error) {
+
+	if params.Limit == 0 {
+		params.Limit = 10
+	}
+
+	if params.Limit > 50 {
+		return GetOrdersResponse{}, fmt.Errorf("limit must be less than or equal to 50")
+	}
 
 	accessToken, err := c.getToken()
 	if err != nil {
