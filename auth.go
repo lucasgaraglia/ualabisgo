@@ -18,7 +18,7 @@ type tokenResponse struct {
 // issueAccessToken issues a new access token to the Ualá bis api.
 func (c *Client) issueAccessToken() (tokenResponse, error) {
 
-	tokenURL := c.BaseURL + "/auth/token"
+	tokenURL := c.AuthBaseURL + "/auth/token"
 
 	type auth struct {
 		Username       string `json:"username"`

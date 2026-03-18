@@ -28,7 +28,7 @@ type RefundOrderResponse struct {
 
 // RefundOrder creates a refund for an order.
 func (c *Client) RefundOrder(request RefundOrderParams) (RefundOrderResponse, error) {
-	url := fmt.Sprintf("%s/v2/api/orders/%s/refund", c.BaseURL, request.OrderUUID)
+	url := fmt.Sprintf("%s/v2/api/orders/%s/refund", c.CheckoutBaseURL, request.OrderUUID)
 
 	accessToken, err := c.getToken()
 	if err != nil {

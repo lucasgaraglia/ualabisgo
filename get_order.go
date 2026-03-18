@@ -75,7 +75,7 @@ func (c *Client) GetOrder(uuid string) (GetOrderResponse, error) {
 		return GetOrderResponse{}, err
 	}
 
-	url := fmt.Sprintf("%s/orders/%s", c.BaseURL, uuid)
+	url := fmt.Sprintf("%s/orders/%s", c.CheckoutBaseURL, uuid)
 
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {

@@ -7,10 +7,11 @@ import (
 
 // Client is the Ualá Bis api client.
 type Client struct {
-	BaseURL        string
-	ClientID       string
-	ClientSecretId string
-	Username       string
+	AuthBaseURL     string
+	CheckoutBaseURL string
+	ClientID        string
+	ClientSecretId  string
+	Username        string
 
 	token     string
 	expiresAt time.Time
@@ -21,10 +22,11 @@ type Client struct {
 // Make sure to use the correct credentials for the production environment.
 func NewProductionClient(clientId, clientSecretId, username string) *Client {
 	return &Client{
-		BaseURL:        PRODUCTION_URL,
-		ClientID:       clientId,
-		ClientSecretId: clientSecretId,
-		Username:       username,
+		AuthBaseURL:     AUTH_PRODUCTION_URL,
+		CheckoutBaseURL: CHECKOUT_PRODUCTION_URL,
+		ClientID:        clientId,
+		ClientSecretId:  clientSecretId,
+		Username:        username,
 	}
 }
 
@@ -32,9 +34,10 @@ func NewProductionClient(clientId, clientSecretId, username string) *Client {
 // Make sure to use the correct credentials for the stage environment.
 func NewStageClient(clientId, clientSecretId, username string) *Client {
 	return &Client{
-		BaseURL:        STAGE_URL,
-		ClientID:       clientId,
-		ClientSecretId: clientSecretId,
-		Username:       username,
+		AuthBaseURL:     AUTH_STAGE_URL,
+		CheckoutBaseURL: CHECKOUT_STAGE_URL,
+		ClientID:        clientId,
+		ClientSecretId:  clientSecretId,
+		Username:        username,
 	}
 }

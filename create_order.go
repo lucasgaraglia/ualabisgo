@@ -39,7 +39,7 @@ type CreateOrderParams struct {
 // CreateOrder creates an order for the given parameters.
 func (c *Client) CreateOrder(params CreateOrderParams) (CreateOrderResponse, error) {
 
-	url := fmt.Sprintf("%s/%s", c.BaseURL, "checkout")
+	url := fmt.Sprintf("%s/%s", c.CheckoutBaseURL, "checkout")
 
 	accessToken, err := c.getToken()
 	if err != nil {

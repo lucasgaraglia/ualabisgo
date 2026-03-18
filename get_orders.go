@@ -37,7 +37,7 @@ func (c *Client) GetOrders(params GetOrdersParams) (GetOrdersResponse, error) {
 		return GetOrdersResponse{}, err
 	}
 
-	orderURL := fmt.Sprintf("%s/%s", c.BaseURL, "orders")
+	orderURL := fmt.Sprintf("%s/%s", c.CheckoutBaseURL, "orders")
 	request, err := http.NewRequest("GET", orderURL, nil)
 	if err != nil {
 		return GetOrdersResponse{}, err
