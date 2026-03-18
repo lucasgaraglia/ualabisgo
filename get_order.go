@@ -23,7 +23,7 @@ type customerCard struct {
 	HolderName   string `json:"holder_name"`
 	Issuer       string `json:"issuer"`
 	Pan          string `json:"pan"`
-	Installments []struct {
+	Installments struct {
 		Number              int     `json:"number"`
 		Total               float64 `json:"total"`
 		FinancialCost       float64 `json:"financial_cost"`
