@@ -1,6 +1,6 @@
 # ualabisgo
 
-Non-official SDK for Ualá Bis in Go.
+`ualabisgo` is an unofficial SDK for Ualá Bis in Go.
 
 ## Installation
 
